@@ -96,7 +96,7 @@ def sincinterp1D(data, oldtime, newtime, cutoff_mult=1.0, window=1):
     """
     ## Find the cutoff frequency ##
     cutoff = 1/np.mean(np.diff(newtime)) * cutoff_mult
-    print "Doing sinc interpolation with cutoff=%0.3f and %d lobes." % (cutoff, window)
+    print ("Doing sinc interpolation with cutoff=%0.3f and %d lobes." % (cutoff, window))
     
     ## Construct new signal ##
     newdata = np.zeros((len(newtime),1))

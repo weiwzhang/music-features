@@ -24,13 +24,13 @@ beet, sr = librosa.load(pjoin(test_data_path,
                      'Beethoven_Op031No2-03_002_20090916-SMD.mp3'), sr=sr)
 # load test.wav file
 # pure tone 100Hz (pretty sure, but based off of after the fact calculations)
-test, sr = librosa.load(pjoin(test_data_path,
-                      'test.wav'), sr=sr)
+#test, sr = librosa.load(pjoin(test_data_path,
+#                      'test.wav'), sr=sr)
 
 # load test_1000,350,350,0,1000.wav
 # alternating tones of [1000, 350, 350, 0, 1000] Hz
-test_alt, sr = librosa.load(pjoin(test_data_path,
-                        'test_1000,350,350,0,1000.wav'), sr=sr)
+#test_alt, sr = librosa.load(pjoin(test_data_path,
+#                        'test_1000,350,350,0,1000.wav'), sr=sr)
 
 # Toy signal: Sampled at 1000 Hz that is composed of a f=6 Hz, f=10 Hz, f=13
 # Hz components.
@@ -58,7 +58,8 @@ class TestRMS:
                                           decomposition=False), 1)
 
     def test_simple_array(self):
-        val = extractor.rms(np.array([1, 2, 3, 4, 5]), decomposition=False)
+        val = extractor.rms(np.array([1, 2, 3, 4, 5]), deco
+            mposition=False)
         npt.assert_equal(val, 3.3166247903554)
 
     def test_againstMIR_beethoven(self):

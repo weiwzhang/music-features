@@ -378,8 +378,8 @@ def createResponse(stim, nVox, wts=None, rho=0.8, norm=True):
 	t, nF = stim.shape[0], stim.shape[1]
 	# If no weights or wrong sized weights, randomly generate weights
 	if (wts is None) or (wts.shape != (nF, nVox)):
-		print 'Either no weights provided or weights have incorrect\
-		        dimensions. Will generate new weights...'
+		print('Either no weights provided or weights have incorrect\
+		        dimensions. Will generate new weights...')
 		wts =  np.random.ranf((nF, nVox))
 	# Calculate expected response
 	sig = np.dot(stim, wts)

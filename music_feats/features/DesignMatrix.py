@@ -497,7 +497,7 @@ class DesignMatrix(object):
         """
         # TODO: find a way to integrate this with the pre-existing downsampling stuff,
         # (maybe via variables/parameters)
-        
+
         # compute framelength, the same way computed in cqt based off cqt extraction params
         frame_length = seconds * sr
         frame_length = (frame_length//cqt_hop) * cqt_hop

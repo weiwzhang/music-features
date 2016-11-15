@@ -22,7 +22,8 @@ __all__ = ['rms',
            'fluctuationCentroid',
            'MPS']
 
-def rms(y, sr=44100, n_fft=2048, hop_length=None, pad=None, decomposition=True):
+def rms(y, sr=44100, win_length=0.05, hop_length=None,
+    pad=None, decomposition=True):
     '''
     Calculate root-mean-square energy from a time-series signal
     
@@ -63,13 +64,13 @@ def rms(y, sr=44100, n_fft=2048, hop_length=None, pad=None, decomposition=True):
 
     '''
     if decomposition:
-        # win_length = sr * win_length
         if hop_length is None:
-            # hop_length = int(win_length / 2)
-            hop_length = int(n_fft/2)
-        return framewise(rms, y, n_fft, hop_length, padAmt=pad, decomposition=False) #win_length
+            hop_length = win_length/2
+        win_length, hop_length = int(win_length*sr), int(hop_length*sr)
+        return framewise(rms, y, win_length, hop_length,
+            padAmt=pad, decomposition=False)
     else:
-        return math.sqrt(y.dot(y)/len(y))
+        return np.sqrt(np.sum(y**2)/len(y))
 
 
 def zcr(y, sr=44100, p='second', d='one', n_fft=2048, hop_length=None,

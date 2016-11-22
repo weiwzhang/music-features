@@ -126,9 +126,9 @@ class DesignMatrix(object):
             # deal with features that are of incorrect length
             if curr.shape[1] != time_length:
                 if retrieve:
-                    print feat[i] + ' is of mismatched size compared to the rest'
+                    print (feat[i] + ' is of mismatched size compared to the rest')
                 else:
-                    print i + '-th feature is of mismatched size'
+                    print (i + '-th feature is of mismatched size')
                 continue
             self.feature_matrix = np.hstack((self.feature_matrix,
                                                 np.transpose(curr)))
@@ -344,7 +344,7 @@ class DesignMatrix(object):
         """
         # TODO: increase functionality to work with 2D arrays
         if newlen is None:
-            print 'No new length value provided, not downsampling...'
+            print ('No new length value provided, not downsampling...')
             return vals
         ds_rate = int(floor(oldlen/newlen))
         downsampled = [np.squeeze(vals)[ds_rate*i] for i in range(newlen)]
@@ -369,7 +369,7 @@ class DesignMatrix(object):
 
         """
         if newlen is None:
-            print 'New length value not provided, will not resample...'
+            print ('New length value not provided, will not resample...')
             return vals
         return signal.resample(vals, newlen, axis=axis)
 
@@ -390,7 +390,7 @@ class DesignMatrix(object):
 
         """
         if newlen is None:
-            print 'New length value not provided, will not average and downsample...'
+            print ('New length value not provided, will not average and downsample...')
             return vals
         newarr = np.zeros((newlen, vals.shape[1]))
         #winsize = vals.shape[0]/newlen + overlapsize

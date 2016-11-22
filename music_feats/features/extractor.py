@@ -564,7 +564,7 @@ def tonality(y, sr=44100, profiles='gomez', n_fft=2048, hop_length=1024,
     Parameters
     ----------
     y : np.ndarray [shape=(n,)] 
-        Time series of the audio file
+        Time series of the audio file.
     sr : integer
         The sampling rate of the audio file. 
     profiles : string
@@ -573,7 +573,7 @@ def tonality(y, sr=44100, profiles='gomez', n_fft=2048, hop_length=1024,
         - Gomez, 2006; Krumhansl, Cognitive Foundations of Pitch;
         Temperley The Krumhansl-Schmuckler Key-Finding Algorithm
         Revisted; Temperley, MIREX; Wei Chai MIT PhD Thesis
-    n_fft : integer. 
+    n_fft : integer
         FFT window size for STFT
     hop_length : integer. 
         The amount of overlap between the frames
@@ -582,7 +582,7 @@ def tonality(y, sr=44100, profiles='gomez', n_fft=2048, hop_length=1024,
        The bin width to bin the spectrogram with
         before calculating chroma. Number is rounded down to nearest
         power of 2. (Default is 4 seconds -> ~3 seconds)
-   center : boolean. 
+    center : boolean. 
         For extractor.chromagram(). Whether or not to
         center the spectrogram before calculating the chromagram.
         Default is True.

@@ -3,7 +3,8 @@ import librosa
 import numpy as np
 import music_feats
 from music_feats.features import extractor
-from music_feats.utils import *
+#from music_feats.utils import *
+from music_feats import utils
 
 __all__ = ['Features']
 

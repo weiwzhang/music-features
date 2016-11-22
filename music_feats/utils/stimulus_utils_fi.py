@@ -187,8 +187,8 @@ def load_generic_trfiles(respdict,
         try:
             trf = TRFile(os.path.join(root, "{}.report".format(stimulus)))
             trdict[stimulus] = [trf]
-        except Exception, e:
-            print e
+        except Exception(e):
+            print(e)
 
     return trdict
 
@@ -217,7 +217,7 @@ def load_generic_trfiles_fi(stimuli, subject, root="data/trfiles"):
             fname = "{0}_{1}.report".format(stimulus, subject)
             trf = TRFile(os.path.join(root, fname))
             trdict[stimulus] = [trf]
-        except Exception, e:
-            print e
+        except Exception(e):
+            print(e)
 
     return trdict

@@ -10,7 +10,7 @@ import hashlib
 #from util import save_table_file
 #cannot pip install
 import nibabel as ni
-import cortex
+#import cortex
 # changed utils.util --> util for script to work
 
 # changed story to song, not sure if it will work
@@ -289,7 +289,7 @@ def load_responses(respdict, mask, cachedir="/auto/k8/loganesian/respcache/",
                 resparrs[song] = rtf.getNode("/"+song).read()
             rtf.close()
             return resparrs
-        except Exception, e:
+        except Exception(e):
             logger.error("Failed to load data from cache ({}), loading\
                           normally..".format(str(e)))
 
@@ -409,17 +409,17 @@ def selectROI(respdict, ROIS, surface, experiment, mask, multiseries="mean"):
     #     newData[:,ROImask] = data[:,ROImask]
     #     selected[song] = newData
 
-    ROImask = cortex.get_roi_masks(surface, experiment, ROIS)[0]
+    #ROImask = cortex.get_roi_masks(surface, experiment, ROIS)[0]
     # ROImask = ROImask[0] # uncessary line
     # ROImask = ROImask != 0 # original
-    ROImask = ROImask == 0 # trying something out
+    #ROImask = ROImask == 0 # trying something out
     resps = dict()
     for song, docs in respdict.items():
         logger.info("Loading response data for song {}..".format(song))
         datas = []
         for d in docs:
             tmp = d.get_data()
-            tmp[:, ROImask] = 0
+            #tmp[:, ROImask] = 0
             datas.append(tmp[:, mask])
         if multiseries == "mean":
             resps[song] = sum(datas)/len(datas)

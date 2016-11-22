@@ -1,5 +1,5 @@
 import numpy as np
-import cortex
+#import cortex
 #from regression_code.huth.npp import mcorr
 from music_feats.utils.viz import separate_model_weights
 
@@ -113,7 +113,7 @@ def createVolume(data, mask, surface, xfms, vmin=None, vmax=None, factor=0.95):
     else:
         vmax = factor * vmax
 
-    return cortex.Volume(volData, surface, xfms, vmin=vmin, vmax=vmax)
+    #return cortex.Volume(volData, surface, xfms, vmin=vmin, vmax=vmax)
 
 def averageDelays(wt, modeldims, delays=4):
     """Compute the average weight across delays. Assumes there are wt.shape[0]/delays

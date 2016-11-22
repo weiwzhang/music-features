@@ -13,14 +13,14 @@ def tonotopy_labels(fname, fpath='/auto/k8/loganesian/stimuli/tonotopy/uncalibra
     fname : the name of the stimulus of which you wish to load the labels.
     fpath : the path where the tonotopy files are saved. 
 			Default : '/auto/k8/loganesian/stimuli/tonotopy/uncalibrated_wavs'
-	numF : the number of tonal centers used in the tonotopy experiment.Default = 10
+    numF : the number of tonal centers used in the tonotopy experiment.Default = 10
 	
 	Returns
     -------
 	data_matrix : np.ndarray. [shape=(n, numF)] Binary matrix denoting which
 					 	    frequency center correponds to which sample.
-	labels : np.ndarray. [shape=(n,)] The actual labels for the sound file.
-	freqs : np.ndarray. [shape=(numF,)] The center frequencies used for the localizer.
+    labels : np.ndarray. [shape=(n,)] The actual labels for the sound file.
+    freqs : np.ndarray. [shape=(numF,)] The center frequencies used for the localizer.
 					  Computed: np.logspace(np.log10(150), np.log10(9600), num=numF)
 
 	"""

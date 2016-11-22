@@ -17,8 +17,8 @@ percentError = 0.1 # percentage error within MIR value
 test_data_path = pjoin(os.path.dirname(__file__), 'data')
 
 # load beethoven test file
-beet, sr = librosa.load(pjoin(test_data_path,
-                     'Beethoven_Op031No2-03_002_20090916-SMD.mp3'), sr=sr)
+#beet, sr = librosa.load(pjoin(test_data_path,
+                     #'Beethoven_Op031No2-03_002_20090916-SMD.mp3'), sr=sr)
 # load test.wav file
 # pure tone 100Hz (pretty sure, but based off of after the fact calculations)
 #test, sr = librosa.load(pjoin(test_data_path,
@@ -55,8 +55,7 @@ class TestRMS:
                                           decomposition=False), 1)
 
     def test_simple_array(self):
-        val = extractor.rms(np.array([1, 2, 3, 4, 5]), deco
-            mposition=False)
+        val = extractor.rms(np.array([1, 2, 3, 4, 5]), decomposition=False)
         npt.assert_equal(val, 3.3166247903554)
 
     def test_againstMIR_beethoven(self):

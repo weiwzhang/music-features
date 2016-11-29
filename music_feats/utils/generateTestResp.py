@@ -13,7 +13,7 @@ from itertools import chain
 from collections import defaultdict
 #from cortex import get_roi_mask
 #from util import save_table_file
-#import nibabel as ni
+import nibabel as ni
 
 __all__ = ['generateTestR',
 			'scramble',
@@ -269,12 +269,12 @@ def savenewBR(BRnew, fpath, fname, cnt=None):
 
 	"""
 
-	#BRnewI = ni.Nifti1Image(BRnew, np.eye(4))
-	#if cnt:
-		#BRnewI.to_filename(os.path.join(fpath, fname.format(cnt)))
-	#else:
-		#BRnewI.to_filename(os.path.join(fpath, fname))
-	#return BRnewI
+	BRnewI = ni.Nifti1Image(BRnew, np.eye(4))
+	if cnt:
+		BRnewI.to_filename(os.path.join(fpath, fname.format(cnt)))
+	else:
+		BRnewI.to_filename(os.path.join(fpath, fname))
+	return BRnewI
 
 def addnoise(sig, std=None, use_sig=False):
 

@@ -5,4 +5,5 @@ coverage
 pytest
 nibabel
 tables
+pretty_midi
 Sphinx==1.3.1

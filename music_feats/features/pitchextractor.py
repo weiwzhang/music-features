@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-import pretty_midi
+#import pretty_midi
 from collections import defaultdict
 
 __all__ = ['BinnedNote',
@@ -138,14 +138,14 @@ def pitchExtraction(midi_file, num_instruments=1, binsize=2.0, **kwargs):
 		       than one instrument; quiting now")
 		return 
 	
-	midi_data = pretty_midi.PrettyMIDI(midi_file)
-	instrument = midi_data.instruments[0]
+	#midi_data = pretty_midi.PrettyMIDI(midi_file)
+	#instrument = midi_data.instruments[0]
 
 	binnedNotes = defaultdict(list)
 	extractedPitches = []
 	
-	for time in np.arange(0, midi_data.get_end_time(), binsize):
-		binnedNotes[time] = []
+	#for time in np.arange(0, midi_data.get_end_time(), binsize):
+		#binnedNotes[time] = []
 
 	for note in instrument.notes:
 		thisbin, nextbin = calculatebintime(note.start, note.end, binsize)

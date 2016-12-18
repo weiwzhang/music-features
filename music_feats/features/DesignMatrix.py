@@ -300,14 +300,14 @@ class DesignMatrix(object):
         oldlen : integer. 
             The old length of the values.
         nonlin : string. 
-            The nonlinearity to add to the signal.
+            The nonlinearity to add to the signal. 
             Default is 'squared'
         endTrim : boolean. 
             Whether or not to trim the last 5 TRs for the new
             set of time points (i.e., the new length) for the features. This is
             used when using TR reports for calculate the new length/timepoints
             and if the experimental setup had 5 TRs of no stimulus at the end of
-            the run. Default False.
+            the run. Default False. 
         newlen : integer. 
             The new feature length to downsample to.
             Used when no TR report available for the data to compute the new
@@ -557,6 +557,6 @@ class DesignMatrix(object):
         Returns
         -------
         feature_matrix : np.ndarray [shape=].
-        
+
         """
         return self.feature_matrix
